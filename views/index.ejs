@@ -17,36 +17,118 @@
 <body>
   <h3 class="mt-4">Access Testing</h3>
   
-  <!-- MDB -->
-  <div class="container mt-4">
-    <form action="/get-mdb" method="post" class="mb-3">
-      <div class="mb-3">
-        <label for="jsFile" class="form-label">Get .mdb</label>
-        <select name="jsFile" class="form-select">
-          <% mdbFiles.forEach((file) => { %>
-            <option value="<%= file.replace(/\.js$/, '') %>"><%= file %></option>
-          <% }) %>
-        </select>
+  <main class="container">
+
+
+    <!-- MDB -->
+    <section class="row">
+
+      <!--  -->
+      <div class="col-md-4">
+        <form action="/" method="get">
+          <div class="mb-3">
+            <label for="mdbFile" class="form-label">Get .mdb</label>
+            <select name="mdbFile" class="form-select">
+              <% mdbFiles_get.forEach((file) => { %>
+                <option value="<%= file.replace(/\.js$/, '') %>"><%= file %></option>
+              <% }) %>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>      
+  
+      <!--  -->
+      <div class="col-md-4">
+        <form action="/" method="get">
+          <div class="mb-3">
+            <label for="accdbFile" class="form-label">Get .mdb</label>
+            <select name="accdbFile" class="form-select">
+                <% accdbFiles_get.forEach((file) => { %>
+                <option value="<%= file.replace(/\.js$/, '') %>"><%= file %></option>
+              <% }) %>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
+
+      <!--  -->
+      <div class="col-md-4">
+        <form action="/" method="get">
+          <div class="mb-3">
+            <label for="abcAccDbFile" class="form-label">Get abs .accdb</label>
+            <select name="abcAccDbFile" class="form-select">
+              <% absAccDb_get.forEach((file) => { %>
+                <option value="<%= file.replace(/\.js$/, '') %>"><%= file %></option>
+              <% }) %>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+  
+    </section>
+ 
+    <!-- 
+      { ID: 3, firstName: 'Wasan', lastName: 'Kds', ge: 48 },
+      { ID: 4, firstName: 'Napabhorn', lastName: 'Khun', ge: 51 }
 
 
-  <!-- ACCDB -->
-  <div class="container mt-4">
-  <form action="/get-accdb" method="post" class="mb-3">
-    <div class="mb-3">
-      <label for="jsFile" class="form-label">Get .mdb</label>
-      <select name="jsFile" class="form-select">
-          <% accdbFiles.forEach((file) => { %>
-          <option value="<%= file.replace(/\.js$/, '') %>"><%= file %></option>
-        <% }) %>
-      </select>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
+          EmployeeID: 2,
+      FullNameFNLN: 'Andrew Cencini',
+      EmailAddress: 'andrew@northwindtraders.com'
+
+    -->
+    <!-- Table -->
+    <section class="mt-4">
+      <% if (file == 'mdb') { %>
+        <h4 class="mb-3 text-center">MDB Data</h4>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th class="text-center">ID</th>
+              <th class="text-center">firstName</th>
+              <th class="text-center">lastName</th>
+              <th class="text-center">ge</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% accData.forEach((obj)=> { %>
+              <tr>
+                <td class="text-center"><%= obj.ID %></td>
+                <td class=""><%= obj.firstName %></td>
+                <td class=""><%= obj.lastName %></td>
+                <td class="text-end"><%= obj.ge %></td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+      <% }else if (file == 'accdb'){ %>
+        <h4 class="mb-3 text-center">ACCDB Data</h4>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th class="text-center">EmployeeID</th>
+              <th class="text-center">FullNameFNLN</th>
+              <th class="text-center">EmailAddress</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% accData.forEach((obj)=> { %>
+              <tr>
+                <td class="text-center"><%= obj.EmployeeID %></td>
+                <td class=""><%= obj.FullNameFNLN %></td>
+                <td class=""><%= obj.EmailAddress %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      <% } %>
+    </section>
+
+  </main>
+
 
   
 
