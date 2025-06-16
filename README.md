@@ -16,7 +16,7 @@ npm install
 ```
 
 ## รูปภาพ
-ตัวอย่าง ตาราง Customer ในไฟล์ .mdb
+ตัวอย่าง ตาราง member ในไฟล์ .mdb
 ![Image customers.png](images/customers.png)
 
 ตัวอย่าง Report ในไฟล์ .accdb
