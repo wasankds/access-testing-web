@@ -22,8 +22,8 @@ npm install
 ตัวอย่าง Report ในไฟล์ .accdb
 ![Image qryrptEmployeeEmailList.png](images/qryrptEmployeeEmailList.png)
 
-ตัวอย่าง ผลลัพธ์
-![Image qryrptEmployeeEmailList.png](images/qryrptEmployeeEmailList.png)
+ตัวอย่าง หน้าเว็บ
+![Image result_web_accdb.png](images/result_web_accdb.png)
 
 
 ## ผู้พัฒนา
