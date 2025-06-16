@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "name": "access_testing",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mdb-reader": "^3.1.0",
+    "odbc": "^2.4.9"
+  }
+}
